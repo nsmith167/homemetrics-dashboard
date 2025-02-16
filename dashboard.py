@@ -8,6 +8,7 @@ logging.basicConfig(level=logging.INFO)
 
 
 app = Dash(external_stylesheets=[dbc.themes.MINTY])
+app.title = "Home Temps"
 
 
 
