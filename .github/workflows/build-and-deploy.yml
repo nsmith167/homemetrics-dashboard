@@ -29,5 +29,5 @@ jobs:
 
       - name: Build and tag Docker image
         run: |
-          docker buildx build --platform linux/amd64,linux/arm/v7 -t ${{ secrets.DOCKER_USERNAME }}/home-metrics-dashboard:latest . --push
-          docker buildx build --platform linux/amd64,linux/arm/v7 -t ${{ secrets.DOCKER_PASSWORD }}/home-metrics-dashboard:${{ env.sha_short }} . --push
+          docker buildx build --platform linux/amd64,linux/arm64/v8 -t ${{ secrets.DOCKER_USERNAME }}/home-metrics-dashboard:latest . --push
+          docker buildx build --platform linux/amd64,linux/arm64/v8 -t ${{ secrets.DOCKER_PASSWORD }}/home-metrics-dashboard:${{ env.sha_short }} . --push
