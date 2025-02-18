@@ -62,7 +62,7 @@ def update_humidity_graph(value):
 def get_historical_temp_humidity_data(timeframe):
     temp_data = weather_client.fetch_historical_data(timeframe_options[timeframe])
     df = pd.DataFrame(temp_data)
-    if not df.empty:
+    if "timestamp" in df.columns and "temperature" in df.columns:
         df["timestamp"] = df["timestamp"].map(lambda timestamp: convert_epoch_seconds_to_local_time(timestamp))
         df["temperature"] = df["temperature"].map(lambda temp: celsius_to_fahrenheit(temp))
     return df
